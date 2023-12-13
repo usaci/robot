@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    min-height: 100vh;
+}
+
+:root {
+    --main-color: #1772e1;
+}
+
+body {
+    background: #ebebeb;
+    color: var(--main-color);
+    font-weight: bold;
+    font-family: "Roboto", "YuGothic", "Yu Gothic", "Noto Sans JP", "Hiragino Sans", "Meiryo Ul", sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.7;
+    font-size: 1.8rem;
+}
+
+
+/*=============================================
+
+cursor
+
+===============================================*/
+
+.cursor {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    top: -75px;
+    left: -75px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.cursor svg {
+    animation: cursor 6s linear infinite;
+}
+
+@keyframes cursor {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+/*=============================================
+
+mainVisual
+
+===============================================*/
+
+
+.container {
+    overflow: hidden;
+    background-image: url('../images/grid_bg.png');
+}
+
+.mainVisual {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin-bottom: 150px;
+}
+
+.mainCanvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+canvas {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+h1.siteTitle{
+    position: absolute;
+    font-size: 12vw;
+    left: 16px;
+    bottom: 0;
+    font-family: "roc-grotesk-wide", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--main-color);
+    line-height: 0.9;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: 1.5rem;
+    }
+
+    header.siteHeader {
+        padding: 10px;
+    }
+
+    header .siteHeader__nav {
+        font-size: 2.2rem;
+    }
+    canvas {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+
+    .mainVisual {
+        height: 100svh;
+        margin-bottom: 60px;
+    }
+
+    .cursor {
+        display: none;
+    }
+
+    .inner {
+        padding: 20px;
+    
+    }
+}
